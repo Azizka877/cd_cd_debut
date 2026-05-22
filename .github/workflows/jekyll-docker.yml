@@ -3,12 +3,19 @@ name: Hello word
 on: workflow_dispatch
 
 jobs:
-  hello:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Hello step
-      run: |
-        echo "this is line one"
-        echo "line two"
+    - name: build step
+      run: echo "a demo build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test phase
+      run: echo "running test cases"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy the app
+      run: echo "deploying the app"
+   
