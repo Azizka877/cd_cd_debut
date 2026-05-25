@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pyapp
-  namespace: default  
+  namespace: default
   labels:
     app: pyapp
 spec:
@@ -17,6 +17,6 @@ spec:
     spec: # ⚠️ "spec" du template (pas de tiret)
       containers:
         - name: pyapp
-          image: azizka12/gha-pyapp:0d66534 # ← mets TON image
+          image: azizka12/gha-pyapp:b51ee47 # ← mets TON image
           ports:
             - containerPort: 8000
