@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyapp
+  labels:
+    app: pyapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyapp           # ⚠️ doit être indenté sous matchLabels
+  template:
+    metadata:
+      labels:
+        app: pyapp         # ⚠️ doit être indenté sous labels
+    spec:                  # ⚠️ "spec" du template (pas de tiret)
+      containers:
+      - name: pyapp
+        image: azizka12/pyapp:v1   # ← mets TON image
+        ports:
+        - containerPort: 8000
